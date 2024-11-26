@@ -65,8 +65,9 @@ model PomodoroSession {
 
   isCompleted Boolean?  @default(false) @map("is_completed")
 
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @map("user_id")
+  user         User   @relation(fields: [userId], references: [id])
+  userId       String @map("user_id")
+  totalSeconds Int?   @map("total_seconds")
 
   rounds PomodoroRound[]
 
